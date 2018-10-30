@@ -12,7 +12,9 @@ let defaultState = {
 let amount = (state = defaultState, action) => {
   if(action.type ==='CHANGE_ORIGIN_AMOUNT') {
     //create a new object Object.assign({}) - becouse dirrect mutetig state is not allowed, then copy state and assign action.data to originAmount
-    return  Object.assign({}), state, {originAmount : action.data};
+    return {
+      ...state, originAmount : action.data
+    }
   }
 
   //else return defaul state
