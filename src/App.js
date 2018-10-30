@@ -8,7 +8,11 @@ let defaultState = 0
 //reducer is a function that updates state and it takes two arguments state and action
 //(state = defaultState) is equivalent of ES5 state = state || defaultState - if state is defined use state if not, use dafaultState
 let amount = (state = defaultState, action) => {
+  if(action.type ==='INCREMENT')
   return state + 1
+
+  //else return defaul state
+  return state;
 }
 
 //store is where you save you state
@@ -20,6 +24,8 @@ store.subscribe(() => {
 })
 
 //to update store we use store.dispatch that fires an action and action must be an object
+store.dispatch({type: 'INCREMENT'})
+store.dispatch({type: ''})
 store.dispatch({type: ''})
 
 class App extends Component {
