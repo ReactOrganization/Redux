@@ -5,10 +5,14 @@ import Body from './components/body';
 import store from  './stores/configureStore.js'
 
 class App extends Component {
-  render() {
-    return (
+  componentDidMount() {
+    store.subscribe(() =>{
+      this.setState({})    
+    })
+  }
+  render() { return (
       <div className="App">
-        <Body originAmount={store.getState().originAmount}/>
+        <Body originAmount={store.getState().originAmount} change={this.handleOriginAmountChange}/>
       </div>
     );
   }
