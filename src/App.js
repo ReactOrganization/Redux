@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { createStore } from 'redux';
 import Body from './components/body';
+import store from  './stores/configureStore.js'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Body />
-
+        <Body originAmount={store.getState().originAmount}/>
       </div>
     );
   }

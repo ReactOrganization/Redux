@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-const Body = () => {
+const Body = ({originAmount}) => {
   return(
     <div>
-      <p>some text</p>
+      <p>data from the state/store {originAmount}</p>
     </div>
   )
 }
